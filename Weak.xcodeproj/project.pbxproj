@@ -27,6 +27,7 @@
 		52FF027A1DC8815C002CB085 /* Weak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		52FF027F1DC883A8002CB085 /* Unowned.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unowned.swift; sourceTree = "<group>"; };
 		52FF02841DC88464002CB085 /* Weak.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Weak.playground; sourceTree = "<group>"; };
+		52FF028A1DC89005002CB085 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 				52FF02771DC88011002CB085 /* Support */,
 				52FF02471DC87F9A002CB085 /* Products */,
 				52FF02841DC88464002CB085 /* Weak.playground */,
+				52FF028A1DC89005002CB085 /* Package.swift */,
 				52FF02791DC88115002CB085 /* LICENSE.md */,
 			);
 			sourceTree = "<group>";
