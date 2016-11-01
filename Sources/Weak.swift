@@ -47,3 +47,23 @@ public struct Weak<Object: AnyObject>: ExpressibleByNilLiteral {
     }
 
 }
+
+/// Returns a Boolean value indicating whether two references point to the same object instance.
+public func === <T: AnyObject>(lhs: Weak<T>, rhs: Weak<T>) -> Bool {
+    return lhs.object === rhs.object
+}
+
+/// Returns a Boolean value indicating whether two references point to the same object instance.
+public func === <T: AnyObject>(lhs: Weak<T>, rhs: T?) -> Bool {
+    return lhs.object === rhs
+}
+
+/// Returns a Boolean value indicating whether two references point to the same object instance.
+public func === <T: AnyObject>(lhs: T?, rhs: Weak<T>) -> Bool {
+    return lhs === rhs.object
+}
+
+/// Returns a Boolean value indicating whether two references point to the same object instance.
+public func === <T: AnyObject>(lhs: Weak<T>, rhs: Unowned<T>) -> Bool {
+    return lhs.object === rhs.object
+}
