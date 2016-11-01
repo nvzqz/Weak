@@ -26,10 +26,19 @@
 //
 
 /// A type that wraps an `Object` with a `weak` binding.
-public struct Weak<Object: AnyObject>: ExpressibleByNilLiteral {
+public struct Weak<Object: AnyObject>: ExpressibleByNilLiteral, CustomStringConvertible {
 
     /// The object of `self`.
     public weak var object: Object?
+
+    /// A textual representation of this instance.
+    public var description: String {
+        if let object = object {
+            return "Weak(" + String(reflecting: object) + ")"
+        } else {
+            return "nil"
+        }
+    }
 
     /// Creates an instance for an optional object.
     public init(_ object: Object?) {
