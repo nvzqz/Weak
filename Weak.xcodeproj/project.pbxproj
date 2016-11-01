@@ -6,6 +6,13 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		52FF027B1DC8815C002CB085 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF027A1DC8815C002CB085 /* Weak.swift */; };
+		52FF027C1DC8815C002CB085 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF027A1DC8815C002CB085 /* Weak.swift */; };
+		52FF027D1DC8815C002CB085 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF027A1DC8815C002CB085 /* Weak.swift */; };
+		52FF027E1DC8815C002CB085 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF027A1DC8815C002CB085 /* Weak.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		52FF02461DC87F9A002CB085 /* Weak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Weak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52FF02541DC87FA8002CB085 /* Weak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Weak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -13,6 +20,7 @@
 		52FF026E1DC87FBA002CB085 /* Weak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Weak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52FF02781DC8801D002CB085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Weak.xcodeproj/Info.plist; sourceTree = "<group>"; };
 		52FF02791DC88115002CB085 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		52FF027A1DC8815C002CB085 /* Weak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,7 @@
 		52FF02761DC87FF6002CB085 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				52FF027A1DC8815C002CB085 /* Weak.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -200,18 +209,22 @@
 				TargetAttributes = {
 					52FF02451DC87F9A002CB085 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					52FF02531DC87FA8002CB085 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					52FF02601DC87FB1002CB085 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					52FF026D1DC87FBA002CB085 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -272,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FF027B1DC8815C002CB085 /* Weak.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FF027C1DC8815C002CB085 /* Weak.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FF027D1DC8815C002CB085 /* Weak.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FF027E1DC8815C002CB085 /* Weak.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
