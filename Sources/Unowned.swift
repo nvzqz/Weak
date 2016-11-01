@@ -57,3 +57,23 @@ public func === <T: AnyObject>(lhs: T?, rhs: Unowned<T>) -> Bool {
 public func === <T: AnyObject>(lhs: Unowned<T>, rhs: Weak<T>) -> Bool {
     return lhs.object === rhs.object
 }
+
+/// Returns a Boolean value indicating whether two references point to different object instances.
+public func !== <T: AnyObject>(lhs: Unowned<T>, rhs: Unowned<T>) -> Bool {
+    return lhs.object !== rhs.object
+}
+
+/// Returns a Boolean value indicating whether two references point to different object instances.
+public func !== <T: AnyObject>(lhs: Unowned<T>, rhs: T?) -> Bool {
+    return lhs.object !== rhs
+}
+
+/// Returns a Boolean value indicating whether two references point to different object instances.
+public func !== <T: AnyObject>(lhs: T?, rhs: Unowned<T>) -> Bool {
+    return lhs !== rhs.object
+}
+
+/// Returns a Boolean value indicating whether two references point to different object instances.
+public func !== <T: AnyObject>(lhs: Unowned<T>, rhs: Weak<T>) -> Bool {
+    return lhs.object !== rhs.object
+}
