@@ -12,6 +12,7 @@
 		52FF02611DC87FB1002CB085 /* Weak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Weak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52FF026E1DC87FBA002CB085 /* Weak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Weak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52FF02781DC8801D002CB085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Weak.xcodeproj/Info.plist; sourceTree = "<group>"; };
+		52FF02791DC88115002CB085 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +53,7 @@
 				52FF02761DC87FF6002CB085 /* Sources */,
 				52FF02771DC88011002CB085 /* Support */,
 				52FF02471DC87F9A002CB085 /* Products */,
+				52FF02791DC88115002CB085 /* LICENSE.md */,
 			);
 			sourceTree = "<group>";
 		};
