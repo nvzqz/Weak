@@ -87,3 +87,33 @@ public func !== <T: AnyObject>(lhs: T?, rhs: Weak<T>) -> Bool {
 public func !== <T: AnyObject>(lhs: Weak<T>, rhs: Unowned<T>) -> Bool {
     return lhs.object !== rhs.object
 }
+
+// Returns a Boolean value indicating whether two weak objects are equal.
+public func == <T: AnyObject & Equatable>(lhs: Weak<T>, rhs: Weak<T>) -> Bool {
+    return lhs.object == rhs.object
+}
+
+/// Returns a Boolean value indicating whether a weak object and an optional object are equal.
+public func == <T: AnyObject & Equatable>(lhs: Weak<T>, rhs: T?) -> Bool {
+    return lhs.object == rhs
+}
+
+/// Returns a Boolean value indicating whether an optional object and a weak object are equal.
+public func == <T: AnyObject & Equatable>(lhs: T?, rhs: Weak<T>) -> Bool {
+    return lhs == rhs.object
+}
+
+// Returns a Boolean value indicating whether two weak objects are not equal.
+public func != <T: AnyObject & Equatable>(lhs: Weak<T>, rhs: Weak<T>) -> Bool {
+    return lhs.object != rhs.object
+}
+
+/// Returns a Boolean value indicating whether a weak object and an optional object are not equal.
+public func != <T: AnyObject & Equatable>(lhs: Weak<T>, rhs: T?) -> Bool {
+    return lhs.object != rhs
+}
+
+/// Returns a Boolean value indicating whether an optional object and a weak object are not equal.
+public func != <T: AnyObject & Equatable>(lhs: T?, rhs: Weak<T>) -> Bool {
+    return lhs != rhs.object
+}
