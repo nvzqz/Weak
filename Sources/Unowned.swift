@@ -26,10 +26,15 @@
 //
 
 /// A type that wraps an `Object` with an `unowned` binding.
-public struct Unowned<Object: AnyObject> {
+public struct Unowned<Object: AnyObject>: CustomStringConvertible {
 
     /// The object of `self`.
     public unowned var object: Object
+
+    /// A textual representation of this instance.
+    public var description: String {
+        return "Unowned(" + String(reflecting: object) + ")"
+    }
 
     /// Creates an instance for an object.
     public init(_ object: Object) {
