@@ -77,6 +77,15 @@ extension Sequence where Iterator.Element: WeakProtocol {
 
 }
 
+extension Sequence where Iterator.Element: AnyObject {
+
+    /// An array of weak references to the elements in `self`.
+    public var weak: [Weak<Iterator.Element>] {
+        return map(Weak.init)
+    }
+
+}
+
 /// Returns a Boolean value indicating whether two references point to the same object instance.
 public func === <W1: WeakProtocol, W2: WeakProtocol>(lhs: W1?, rhs: W2?) -> Bool {
     return lhs?.object === rhs?.object
