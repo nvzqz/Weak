@@ -68,6 +68,15 @@ public protocol WeakProtocol {
 
 }
 
+extension Sequence where Iterator.Element: WeakProtocol {
+
+    /// The objects within `self`.
+    public var objects: [Iterator.Element.Object] {
+        return flatMap { $0.object }
+    }
+
+}
+
 /// Returns a Boolean value indicating whether two references point to the same object instance.
 public func === <W1: WeakProtocol, W2: WeakProtocol>(lhs: W1?, rhs: W2?) -> Bool {
     return lhs?.object === rhs?.object

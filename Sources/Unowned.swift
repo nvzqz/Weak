@@ -54,6 +54,15 @@ public protocol UnownedProtocol {
 
 }
 
+extension Sequence where Iterator.Element: UnownedProtocol {
+
+    /// The objects within `self`.
+    public var objects: [Iterator.Element.Object] {
+        return map { $0.object }
+    }
+
+}
+
 /// Returns a Boolean value indicating whether two references point to the same object instance.
 public func === <U1: UnownedProtocol, U2: UnownedProtocol>(lhs: U1?, rhs: U2?) -> Bool {
     return lhs?.object === rhs?.object
