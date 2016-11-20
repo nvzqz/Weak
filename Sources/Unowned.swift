@@ -63,6 +63,15 @@ extension Sequence where Iterator.Element: UnownedProtocol {
 
 }
 
+extension Sequence where Iterator.Element: AnyObject {
+
+    /// An array of unowned references to the elements in `self`.
+    public var unowned: [Unowned<Iterator.Element>] {
+        return map(Unowned.init)
+    }
+
+}
+
 /// Returns a Boolean value indicating whether two references point to the same object instance.
 public func === <U1: UnownedProtocol, U2: UnownedProtocol>(lhs: U1?, rhs: U2?) -> Bool {
     return lhs?.object === rhs?.object
