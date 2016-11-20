@@ -25,8 +25,8 @@
 //  THE SOFTWARE.
 //
 
-/// A type that wraps an `Object` with a `weak` binding.
-public struct Weak<Object: AnyObject>: ExpressibleByNilLiteral, CustomStringConvertible {
+/// A wrapper around an `Object` with a `weak` binding.
+public struct Weak<Object: AnyObject>: WeakProtocol, ExpressibleByNilLiteral, CustomStringConvertible {
 
     /// The object of `self`.
     public weak var object: Object?
@@ -57,72 +57,83 @@ public struct Weak<Object: AnyObject>: ExpressibleByNilLiteral, CustomStringConv
 
 }
 
-/// Returns a Boolean value indicating whether two references point to the same object instance.
-public func === <T: AnyObject>(lhs: Weak<T>, rhs: Weak<T>) -> Bool {
-    return lhs.object === rhs.object
+/// A type that wraps an `Object` with a `weak` binding.
+public protocol WeakProtocol {
+
+    /// The object type of `Self`.
+    associatedtype Object: AnyObject
+
+    /// The object of `self`.
+    weak var object: Object? { get }
+
 }
 
 /// Returns a Boolean value indicating whether two references point to the same object instance.
-public func === <T: AnyObject>(lhs: Weak<T>, rhs: T?) -> Bool {
-    return lhs.object === rhs
+public func === <W1: WeakProtocol, W2: WeakProtocol>(lhs: W1?, rhs: W2?) -> Bool {
+    return lhs?.object === rhs?.object
 }
 
 /// Returns a Boolean value indicating whether two references point to the same object instance.
-public func === <T: AnyObject>(lhs: T?, rhs: Weak<T>) -> Bool {
-    return lhs === rhs.object
+public func === <W: WeakProtocol>(lhs: W?, rhs: AnyObject?) -> Bool {
+    return lhs?.object === rhs
 }
 
 /// Returns a Boolean value indicating whether two references point to the same object instance.
-public func === <T: AnyObject>(lhs: Weak<T>, rhs: Unowned<T>) -> Bool {
-    return lhs.object === rhs.object
+public func === <W: WeakProtocol>(lhs: AnyObject?, rhs: W?) -> Bool {
+    return lhs === rhs?.object
+}
+
+/// Returns a Boolean value indicating whether two references point to the same object instance.
+public func === <W: WeakProtocol, U: UnownedProtocol>(lhs: W?, rhs: U?) -> Bool {
+    return lhs?.object === rhs?.object
 }
 
 /// Returns a Boolean value indicating whether two references point to different object instances.
-public func !== <T: AnyObject>(lhs: Weak<T>, rhs: Weak<T>) -> Bool {
-    return lhs.object !== rhs.object
+public func !== <W1: WeakProtocol, W2: WeakProtocol>(lhs: W1?, rhs: W2?) -> Bool {
+    return lhs?.object !== rhs?.object
 }
 
 /// Returns a Boolean value indicating whether two references point to different object instances.
-public func !== <T: AnyObject>(lhs: Weak<T>, rhs: T?) -> Bool {
-    return lhs.object !== rhs
+public func !== <W: WeakProtocol>(lhs: W?, rhs: AnyObject?) -> Bool {
+    return lhs?.object !== rhs
 }
 
 /// Returns a Boolean value indicating whether two references point to different object instances.
-public func !== <T: AnyObject>(lhs: T?, rhs: Weak<T>) -> Bool {
-    return lhs !== rhs.object
+public func !== <W: WeakProtocol>(lhs: AnyObject?, rhs: W?) -> Bool {
+    return lhs !== rhs?.object
 }
 
 /// Returns a Boolean value indicating whether two references point to different object instances.
-public func !== <T: AnyObject>(lhs: Weak<T>, rhs: Unowned<T>) -> Bool {
-    return lhs.object !== rhs.object
+public func !== <W: WeakProtocol, U: UnownedProtocol>(lhs: W?, rhs: U?) -> Bool {
+    return lhs?.object !== rhs?.object
 }
 
 // Returns a Boolean value indicating whether two weak objects are equal.
-public func == <T: AnyObject & Equatable>(lhs: Weak<T>, rhs: Weak<T>) -> Bool {
-    return lhs.object == rhs.object
+public func == <W: WeakProtocol>(lhs: W?, rhs: W?) -> Bool where W.Object: Equatable {
+    return lhs?.object == rhs?.object
 }
 
 /// Returns a Boolean value indicating whether a weak object and an optional object are equal.
-public func == <T: AnyObject & Equatable>(lhs: Weak<T>, rhs: T?) -> Bool {
-    return lhs.object == rhs
+public func == <W: WeakProtocol>(lhs: W?, rhs: W.Object?) -> Bool where W.Object: Equatable {
+    return lhs?.object == rhs
 }
 
 /// Returns a Boolean value indicating whether an optional object and a weak object are equal.
-public func == <T: AnyObject & Equatable>(lhs: T?, rhs: Weak<T>) -> Bool {
-    return lhs == rhs.object
+public func == <W: WeakProtocol>(lhs: W.Object?, rhs: W?) -> Bool where W.Object: Equatable {
+    return lhs == rhs?.object
 }
 
 // Returns a Boolean value indicating whether two weak objects are not equal.
-public func != <T: AnyObject & Equatable>(lhs: Weak<T>, rhs: Weak<T>) -> Bool {
-    return lhs.object != rhs.object
+public func != <W: WeakProtocol>(lhs: W?, rhs: W?) -> Bool where W.Object: Equatable {
+    return lhs?.object != rhs?.object
 }
 
 /// Returns a Boolean value indicating whether a weak object and an optional object are not equal.
-public func != <T: AnyObject & Equatable>(lhs: Weak<T>, rhs: T?) -> Bool {
-    return lhs.object != rhs
+public func != <W: WeakProtocol>(lhs: W?, rhs: W.Object?) -> Bool where W.Object: Equatable {
+    return lhs?.object != rhs
 }
 
 /// Returns a Boolean value indicating whether an optional object and a weak object are not equal.
-public func != <T: AnyObject & Equatable>(lhs: T?, rhs: Weak<T>) -> Bool {
-    return lhs != rhs.object
+public func != <W: WeakProtocol>(lhs: W.Object?, rhs: W?) -> Bool where W.Object: Equatable {
+    return lhs != rhs?.object
 }
