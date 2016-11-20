@@ -137,7 +137,7 @@ let unownedRef: Unowned<SomeClass>
 do {
     let instance = SomeClass()
     unownedRef = Unowned(instance)
-    print(weakRef.object)  // SomeClass(...)
+    print(unownedRef.object)  // SomeClass(...)
 }
 
 print(unownedRef.object)  // CRASHES
